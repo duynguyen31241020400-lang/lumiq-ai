@@ -106,7 +106,7 @@ export default function LearnMathPage() {
         <div className="border-b border-white/10 px-4 py-4">
           <div className="flex items-center gap-2 text-sm font-semibold text-stone-200">
             <MessageSquare className="h-4 w-4 text-rose-200" />
-            Hội thoại demo
+            Hội thoại học tập
           </div>
         </div>
 
@@ -134,7 +134,7 @@ export default function LearnMathPage() {
         </div>
 
         <div className="border-t border-white/10 p-3 text-xs text-stone-400">
-          Luân chuyển tạm trong phiên hiện tại.
+          Chuyển giữa các tình huống trong phiên.
         </div>
       </aside>
 
@@ -170,7 +170,7 @@ export default function LearnMathPage() {
         <div className="flex shrink-0 flex-wrap items-center justify-center gap-2 px-2 pt-3 text-xs text-stone-500">
           <span className="inline-flex items-center gap-1 font-semibold text-stone-600">
             <SlidersHorizontal className="h-3.5 w-3.5 text-rose-900" />
-            Đổi kịch bản:
+            Thử tình huống khác:
           </span>
           {DEMO_SCENARIOS.map((scenario) => (
             <button
