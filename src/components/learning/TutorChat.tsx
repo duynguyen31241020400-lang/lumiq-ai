@@ -30,7 +30,7 @@ interface TutorChatProps {
 }
 
 export function buildTutorGreeting(context: LearnerContext) {
-  return `Chào ${context.learnerName}! Hiện tại mình đang bám vào ${context.activeTopic.toLowerCase()} vì đây là chỗ Minh cần ưu tiên nhất. Mục tiêu ngắn hạn là: ${context.shortGoal}`;
+  return `Chào ${context.learnerName}! Hiện tại mình đang bám vào ${context.activeTopic.toLowerCase()} vì đây là chỗ ${context.learnerName} cần ưu tiên nhất. Mục tiêu ngắn hạn là: ${context.shortGoal}`;
 }
 
 export default function TutorChat({ activeNode, learnerContext, messages, onMessagesChange }: TutorChatProps) {
@@ -76,7 +76,7 @@ export default function TutorChat({ activeNode, learnerContext, messages, onMess
         ...current,
         {
           role: "tutor",
-          content: data.response ?? "Mình vừa mất kết nối ngắn, nhưng vẫn đang bám vào đúng topic của Minh.",
+          content: data.response ?? `Mình vừa mất kết nối ngắn, nhưng vẫn đang bám vào đúng topic của ${learnerContext.learnerName}.",
         },
       ]);
     } catch (error) {
@@ -85,7 +85,7 @@ export default function TutorChat({ activeNode, learnerContext, messages, onMess
         ...current,
         {
           role: "tutor",
-          content: `Mình chưa lấy được phản hồi từ API nên tạm nhắc Minh tập trung vào ${activeNode.shortLabel.toLowerCase()} trước nhé.`,
+          content: `Mình chưa lấy được phản hồi từ API nên tạm nhắc ${learnerContext.learnerName} tập trung vào ${activeNode.shortLabel.toLowerCase()} trước nhé.`,
         },
       ]);
     } finally {
@@ -103,7 +103,7 @@ export default function TutorChat({ activeNode, learnerContext, messages, onMess
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-900">AI Tutor</p>
             <h2 className="font-display text-base font-bold text-stone-900">{activeNode.shortLabel}</h2>
-            <p className="text-xs text-stone-500">Đang bám đúng topic Minh cần ưu tiên trước.</p>
+            <p className="text-xs text-stone-500">Đang bám đúng topic cần ưu tiên trước.</p>
           </div>
         </div>
         <div className="rounded-2xl bg-stone-100 px-3 py-1 text-xs font-semibold text-stone-600 ring-1 ring-stone-200">
@@ -186,11 +186,6 @@ export default function TutorChat({ activeNode, learnerContext, messages, onMess
             className="h-11 flex-1 bg-transparent text-sm text-stone-700 outline-none placeholder:text-stone-400"
             maxLength={500}
             disabled={isLoading}
-          />
-          <button
-            type="submit"
-            disabled={isLoading || !input.trim()}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-900 text-[#faf7ef] transition hover:bg-rose-800 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Send className="h-4 w-4" />
           </button>
