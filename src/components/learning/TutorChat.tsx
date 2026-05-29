@@ -76,7 +76,7 @@ export default function TutorChat({ activeNode, learnerContext, messages, onMess
         ...current,
         {
           role: "tutor",
-          content: data.response ?? `Mình vừa mất kết nối ngắn, nhưng vẫn đang bám vào đúng topic của ${learnerContext.learnerName}.",
+          content: data.response ?? `Mình vừa mất kết nối ngắn, nhưng vẫn đang bám vào đúng topic của ${learnerContext.learnerName}.`,
         },
       ]);
     } catch (error) {
