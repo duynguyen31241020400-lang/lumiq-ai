@@ -35,16 +35,16 @@ class ErrorBoundary extends Component<Props, State> {
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-rose-100 text-rose-700">
             <AlertTriangle className="h-8 w-8" />
           </div>
-          <h2 className="mt-6 text-3xl font-black">Prototype vừa gặp lỗi hiển thị</h2>
+          <h2 className="mt-6 text-3xl font-black">Đã xảy ra lỗi hiển thị</h2>
           <p className="mt-3 text-base leading-7 text-slate-600">
-            Lumiq AI đang ở chế độ competition prototype, nên cách xử lý nhanh nhất là tải lại màn hình để quay về flow chính.
+            Đã có lỗi xảy ra. Vui lòng tải lại trang để tiếp tục.
           </p>
           <button
             onClick={() => window.location.reload()}
             className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
           >
             <RefreshCcw className="h-4 w-4" />
-            Tải lại prototype
+            Tải lại trang
           </button>
         </div>
       </div>
