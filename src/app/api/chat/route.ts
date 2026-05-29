@@ -59,7 +59,7 @@ export async function POST(request: Request) {
     const response = await generateTutorResponse({
       userMessage: message,
       history: payload.history,
-      activeNode,
+      activeNode: activeNode,
       learnerContext: payload.learnerContext,
       context,
     });
@@ -72,7 +72,7 @@ export async function POST(request: Request) {
     console.error("Chat API error", error);
     return NextResponse.json(
       {
-        response: "Mình vẫn đang giữ đúng current goal của Minh, nhưng API vừa lỗi một nhịp. Minh thử gửi lại câu hỏi hoặc nói bước đang làm dở nhé.",
+        response: "Mình vẫn đang giữ đúng mục tiêu hiện tại, nhưng API vừa lỗi một nhịp. Bạn thử gửi lại câu hỏi hoặc mô tả bước đang làm dở nhé.",
       },
       { status: 200 },
     );
