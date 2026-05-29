@@ -113,7 +113,7 @@ export default function AssessmentPage() {
               Bài chẩn đoán <em className="not-italic text-rose-300">đầu vào</em> của Lumiq AI
             </h1>
             <p className="mt-5 text-lg leading-8 text-stone-300">
-              Mục tiêu của demo không phải kiểm tra dài, mà là chỉ ra thật nhanh Minh đang yếu ở phần nào để chuyển ngay sang lộ trình học tập trung.
+              Chỉ 6 câu để xác định nhanh chủ đề yếu nhất. Không kiểm tra toàn diện, chỉ tập trung vào điểm then chốt để học sinh bắt đầu đúng chỗ.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               <InfoCard label="Số câu" value="6 câu" />
@@ -130,16 +130,16 @@ export default function AssessmentPage() {
                   <Target className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-900">Seeded learner</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-900">Ví dụ học sinh</p>
                   <h2 className="font-display text-2xl font-bold">Minh — lớp 10</h2>
                 </div>
               </div>
 
               <div className="mt-6 rounded-2xl bg-stone-100 p-5 ring-1 ring-stone-200">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500">Outcome</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500">Kết quả mong đợi</p>
                 <ul className="mt-3 space-y-3 text-sm leading-6 text-stone-700">
                   <li>Biết ngay chủ đề yếu nhất.</li>
-                  <li>Nhận current goal để vào lộ trình học.</li>
+                  <li>Nhận mục tiêu ưu tiên để vào lộ trình học.</li>
                   <li>Tutor sau đó trả lời theo đúng topic vừa được khuyến nghị.</li>
                 </ul>
               </div>
@@ -148,7 +148,7 @@ export default function AssessmentPage() {
                 onClick={startTest}
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-rose-900 px-6 py-4 text-base font-semibold text-[#faf7ef] shadow-xl shadow-rose-900/10 ring-1 ring-rose-900/40 transition hover:-translate-y-0.5 hover:bg-rose-800"
               >
-                Bắt đầu assessment
+                Bắt đầu đánh giá
                 <ArrowRight className="h-4 w-4" />
               </button>
             </div>
@@ -165,8 +165,8 @@ export default function AssessmentPage() {
           <div className="rounded-[2rem] border border-stone-300 bg-[#fffdf7] p-6 shadow-sm ring-1 ring-stone-200 sm:p-8">
             <div className="flex flex-col gap-5 border-b border-stone-200 pb-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-900">Diagnostic flow</p>
-                <h1 className="mt-2 font-display text-3xl font-black">Assessment của Minh</h1>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-900">Quy trình đánh giá</p>
+                <h1 className="mt-2 font-display text-3xl font-black">Bài đánh giá</h1>
               </div>
               <div className="inline-flex items-center gap-2 rounded-2xl border border-stone-300 bg-stone-100 px-4 py-2 text-sm font-semibold text-stone-700">
                 <Clock3 className="h-4 w-4 text-rose-900" />
@@ -272,7 +272,7 @@ export default function AssessmentPage() {
                   setCurrentIndex((current) => Math.min(current + 1, DIAGNOSTIC_QUESTIONS.length - 1));
                 }}
                 disabled={!answers[currentQuestion.id]}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-rose-900 px-6 py-3 text-sm font-semibold text-[#faf7ef] shadow-xl shadow-rose-900/10 ring-1 ring-rose-900/40 transition hover:-translate-y-0.5 hover:bg-rose-800 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-rose-900 px-6 py-3 text-sm font-semibold text-[#faf7ef] shadow-xl shadow-rose-900/10 ring-1 ring-rose-900/40 transition hover:-translate-y-0.5 hover:bg-rose-800 disabled:cursor-not-allowed disabled-opacity-50 sm:w-auto"
               >
                 {currentIndex === DIAGNOSTIC_QUESTIONS.length - 1 ? "Xem kết quả" : "Tiếp theo"}
                 <ChevronRight className="h-4 w-4" />
@@ -296,7 +296,7 @@ export default function AssessmentPage() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-2xl bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-800 ring-1 ring-emerald-800/15">
                 <CheckCircle2 className="h-4 w-4" />
-                Assessment completed
+                Đánh giá hoàn tất
               </div>
               <h1 className="mt-4 font-display text-4xl font-black tracking-tight sm:text-5xl">Kết quả của {report.learner.name}</h1>
               <div className="mt-3 scholarly-rule w-24" />
@@ -336,7 +336,7 @@ export default function AssessmentPage() {
           <div className="relative overflow-hidden rounded-[2rem] border border-rose-900 bg-gradient-to-br from-stone-900 via-stone-900 to-stone-800 p-8 text-[#faf7ef] shadow-xl shadow-stone-900/20">
             <DotGrid variant="light" />
             <div className="relative">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-rose-300">Current recommendation</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-rose-300">Khuyến nghị hiện tại</p>
               <h2 className="mt-3 font-display text-3xl font-black text-balance sm:text-4xl">
                 Ưu tiên <em className="not-italic text-rose-300">{report.results.find((item) => item.competencyId === report.recommendedCompetencyId)?.title.toLowerCase()}</em> trước.
               </h2>
@@ -345,11 +345,11 @@ export default function AssessmentPage() {
           </div>
 
           <div className="rounded-[2rem] border border-stone-200 bg-[#fffdf7] p-6 shadow-sm ring-1 ring-stone-200">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-900">Why this matters</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-900">Tại sao điều này quan trọng</p>
             <div className="mt-3 scholarly-rule w-16" />
             <ul className="mt-4 space-y-3 text-sm leading-7 text-stone-700">
-              <li>Minh không cần học lại cả chương mà chỉ tập trung một chủ đề trước.</li>
-              <li>Current goal này sẽ được mang sang learning path để chứng minh có cá nhân hóa.</li>
+              <li>Học sinh không cần học lại cả chương mà chỉ tập trung một chủ đề trước.</li>
+              <li>Mục tiêu ưu tiên này sẽ được mang sang lộ trình học tập.</li>
               <li>Tutor chat sẽ nhận đúng topic đang yếu thay vì trả lời chung chung.</li>
             </ul>
           </div>
