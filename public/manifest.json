@@ -1,7 +1,7 @@
 ﻿{
-  "name": "Lumiq AI Competition Prototype",
+  "name": "Lumiq AI",
   "short_name": "Lumiq AI",
-  "description": "Prototype đánh giá đầu vào và gợi ý lộ trình học Toán lớp 10 cho IU Startup Demo Day 2026.",
+  "description": "Đánh giá năng lực và gợi ý lộ trình học Toán cá nhân hóa cho học sinh lớp 10.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8fafc",
