@@ -186,6 +186,11 @@ export default function TutorChat({ activeNode, learnerContext, messages, onMess
             className="h-11 flex-1 bg-transparent text-sm text-stone-700 outline-none placeholder:text-stone-400"
             maxLength={500}
             disabled={isLoading}
+          />
+          <button
+            type="submit"
+            disabled={isLoading || !input.trim()}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-900 text-[#faf7ef] transition hover:bg-rose-800 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Send className="h-4 w-4" />
           </button>
