@@ -17,8 +17,8 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Lumiq AI | Competition Prototype",
-  description: "Prototype đánh giá năng lực và gợi ý lộ trình học Toán lớp 10 cho IU Startup Demo Day 2026.",
+  title: "Lumiq AI | Học tập cá nhân hóa Toán lớp 10",
+  description: "Đánh giá nhanh năng lực và gợi ý lộ trình học Toán cá nhân hóa cho học sinh lớp 10.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
